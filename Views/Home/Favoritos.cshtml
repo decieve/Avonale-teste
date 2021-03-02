@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Favoritos";
+}
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1 class="text-center title-myrepo">
+    Favoritos
+</h1>
+
+<div class="container flex-column">
+    <link rel="stylesheet" href="~/css/site.css" />
+    @foreach (Repositorio r in (List<Repositorio>)ViewData["Repos"])
+    {
+        <a href="Repo/@r.Owner.Login/@r.Name" class="card-link">
+            <div class="node">
+                <img src="@r.Owner.Avatar_url" class="img-node" />
+                <div class="info">
+                    <span class="title-node"><strong>@r.Name</strong></span>
+                </div>
+            </div>
+        </a>
+    }
+</div>

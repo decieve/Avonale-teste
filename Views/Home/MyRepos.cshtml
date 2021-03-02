@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center title-myrepo">
+    Meus repositórios
+</h1>
+
+<div class="container flex-column">
+    <link rel="stylesheet" href="~/css/site.css" />
+    @foreach (Repositorio r in (List<Repositorio>)ViewData["Repos"])
+    {
+        <a href="Repo/@r.Full_name" class="card-link">
+            <div class="node">
+                <img src="@r.Owner.Avatar_url" class="img-node" />
+                <div class="info">
+                    <span class="title-node"><strong>@r.Name</strong></span>
+                    <div class="sub-info">
+                        <span class="texto-divisao">
+                            Autor do repositório
+                        </span>
+                        <span class="texto-divisao">
+                            Linguagem do repositório
+                        </span>
+                        <span class="texto-divisao">
+                            Última data de atualização
+                        </span>
+                        <span class="sub-info-node">@r.Owner.Login</span>
+                        @if (r.Language == null)
+                        {
+                            <span class="sub-info-node">
+                                Este repositório possui várias linguagens
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="sub-info-node">
+                                @r.Language
+                            </span>
+                        }
+                        <span class="sub-info-node">@r.Updated_at</span>
+                    </div>
+
+                </div>
+            </div>
+        </a>
+     }
+    </div>

@@ -1,0 +1,59 @@
+﻿
+@{
+    Repositorio repo = (Repositorio)ViewData["Repo"];
+}
+
+
+<div class="card card-site flex-row border-dark d-flex">
+    <div class="img-repo d-flex m-3">
+        <img class="rounded-circle h-50 shadow" src="@repo.Owner.Avatar_url" />
+    </div>
+    <div class="text-dark text-lg-center m-3 d-flex text-center font-weight-bolder align-top">
+        <h3>@repo.Name</h3>
+        
+        <div class="sub-info-node">
+            @repo.Description
+        </div>
+        Ultima data atualizada @repo.Updated_at.ToString()
+    </div>
+    <form method="post" asp-controller="Home" asp-action="Favoritar" class="btn w-auto h-auto d-flex">
+        <input type="hidden" name="repo" value="@repo.Name" />
+        <input type="hidden" name="username" value="@repo.Owner.Login" />
+        <input type="hidden" name="avatarurl" value="@repo.Owner.Avatar_url" />
+        <button type="submit"  name="favoritar_esse"  value="" class="btn-link h-auto d-flex no-bg">
+            <img src="~/Icons/favorite-24px.svg" />
+        </button>
+    </form>
+</div>
+<div class="box-linguages-contribuidores">
+    <div class="box-linguages">
+        <h3 class="text-dark">Linguagens</h3>
+        @foreach (String l in repo.Languages)
+        {
+            <div>@l</div>
+        }
+    </div>
+    <div class="box-contribuidores center-content">
+        <h3 class="text-dark">Contribuidores</h3>
+        <div class="contribuidores">
+        @foreach (User u in repo.Contributors)
+        {
+            <div class=" center-content">
+                <img class="rounded-circle img-repo" src="@u.Avatar_url" />@u.Login
+            </div>
+        }
+        </div>
+ </div>
+    </div>s
+<script type="text/javascript">
+    function buttonClicker() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        if (message.length > 0) {
+            alert(message);
+        }
+    }
+    window.onload = buttonClicker;
+</script>
+
+

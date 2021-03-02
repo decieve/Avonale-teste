@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row align-content-md-center">
+    @if ((int)ViewData["Page"] >1)
+    {
+        <a class="align-content-md-center" href="/SearchRepos?search=@ViewData["SearchString"]&page=@((int)ViewData["Page"]-1)">
+            <img class="card-img h-100" src="~/Icons/keyboard_arrow_left-24px.svg" />
+        </a>
+    }
+    <h1 class="text-center title-myrepo m-md-auto">
+        Resultados da pesquisa
+    </h1>
+    @if ((int)ViewData["total_count"] > (int)ViewData["Page"] * 20)
+    {
+        <a class="align-content-md-center" href="/SearchRepos?search=@ViewData["SearchString"]&page=@((int)ViewData["Page"]+1)">
+            <img class="card-img h-100" src="~/Icons/keyboard_arrow_right-24px.svg" />
+        </a>
+    }
+</div>
+
+
+<div class="container flex-column">
+    <link rel="stylesheet" href="~/css/site.css" />
+    @foreach (Repositorio r in (List<Repositorio>)ViewData["Repos"])
+    {
+        <a href="Repo/@r.Full_name" class="card-link">
+            <div class="node">
+                <img src="@r.Owner.Avatar_url" class="img-node" />
+                <div class="info">
+                    <span class="title-node"><strong>@r.Name</strong></span>
+                    <div class="sub-info">
+                        <span class="texto-divisao">
+                            Autor do repositório
+                        </span>
+                        <span class="texto-divisao">
+                            Linguagem do repositório
+                        </span>
+                        <span class="texto-divisao">
+                            Última data de atualização
+                        </span>
+                        <span class="sub-info-node">@r.Owner.Login</span>
+                        @if (r.Language == null)
+                        {
+                            <span class="sub-info-node">
+                                Este repositório possui várias linguagens
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="sub-info-node">
+                                @r.Language
+                            </span>
+                        }
+                        <span class="sub-info-node">@r.Updated_at</span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    }
+</div>

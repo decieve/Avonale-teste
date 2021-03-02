@@ -1,0 +1,242 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #3CC47C !important;
+}
+
+.btn-primary {
+    color: #F7F7F7;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #3CC47C;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    color: #F7F7F7 !important;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: rgb(0, 0,0 ) !important;
+}
+body {
+    background-color: rgb(26, 26, 26) !important;
+}
+.navbar {
+    background-color: rgb(0, 0,0 ) !important;
+    padding-left:0;
+}
+.border-top{
+    border-top: 3px solid rgb(12,12,12) !important;
+}
+.border-bottom {
+    border-bottom: 3px solid rgb(12,12,12) !important;
+}
+
+.main {
+    display: flex !important;
+    
+    flex-direction: column !important;
+}
+.texto-dark {
+    flex-grow:50;
+}
+.navbar-nomes {
+    color: #F7F7F7 !important;
+}
+    .navbar-nomes:hover {
+        animation: ease;
+        animation-duration: 0.2s;
+        color: #30E584 !important;
+    }
+.nav-link {
+    padding-bottom:0.2rem !important;
+}
+.node {
+    box-shadow: 0px 0px #1E392A;
+    border-radius: 100px;
+    color: black;
+    background-color: #30E584;
+    padding:0;
+    height: 200px !important;
+    display: flex !important;
+    flex-direction: row !important;
+}
+.img-node {
+    height: 100%;
+    box-shadow: 5px 0px 5px #1D5D3C;
+    border-radius: 50% !important;
+    margin: 0px !important;
+}
+.title-myrepo {
+    margin-bottom:30px !important;
+}
+.info {
+    display: flex !important;
+    flex-direction: column !important;
+    color: black !important;
+    text-shadow: 0.5px 0.5px rgb(12,12,12);
+    height: auto !important;
+    vertical-align: top !important;
+    align-content: center !important;
+    width: 100%;
+}
+.title-node {
+    color: #F7F7F7 ;
+    font-size:24px;
+    font-family: 'Malgun Gothic';
+    text-align: center;
+    padding-right: 10%;
+}
+.sub-info {
+    flex-wrap: wrap;
+    display: flex !important;
+    flex-direction: row !important;
+    vertical-align: central !important;
+}
+.sub-info-node {
+    text-align: center;
+    vertical-align: middle;
+    line-height:25px;
+    margin-left:20px;
+    margin-right: 20px;
+    margin-bottom:20px;
+    padding: 2px 2px;
+    box-shadow: 0px 3px 3px #1D5D3C;
+    font-family: 'Yu Gothic UI';
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+    color: #30E584;
+    width: 25%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    max-height: 100%;
+}
+.texto-divisao {
+    color: rgb(12,12,12);
+    text-align: center;
+    vertical-align: middle;
+    line-height: inherit;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 2px 2px;
+    font-family: 'Yu Gothic UI';
+    border-radius: 10px;
+    width: 25%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    
+}
+.search{
+    display:flex;
+    flex-direction:row;
+}
+.search-input {
+    width: 300px;
+    background: none;
+    border: none;
+    color: #30E584;
+}
+.no-bg{
+    background:none;
+    border:none;
+}
+.button-repo{
+    background:none;
+    border:none;
+    z-index:3;
+    
+}
+
+.card-site {
+    color: black;
+    background-color: #30E584;
+    border-radius:20px;
+}
+.img-repo{
+    height:150px;
+}
+.box-linguages-contribuidores{
+    margin-top:10%;
+    display: flex;
+    width:100%;
+    flex-direction:row;
+}
+.box-linguages {
+    background-color: #30E584;
+    width:40%;
+    margin-right:20%;
+    border-radius:30px;
+    text-align:center;
+}
+.box-contribuidores {
+    background-color: #30E584;
+    width: 40%;
+    border-radius:30px;
+}
+.contribuidores{
+    align-content:center;
+    text-align:center;
+    margin-bottom:20px;
+}
+.center-content {
+    align-content: center;
+    text-align: center;
+}
